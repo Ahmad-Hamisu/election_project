@@ -1,0 +1,84 @@
+<!-- templates/lga_summed_result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LGA Summed Result</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <style>
+      body {
+        padding: 50px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      form {
+        margin-bottom: 20px;
+      }
+
+      label {
+        margin-right: 10px;
+      }
+
+      select {
+        margin-right: 10px;
+      }
+
+      button {
+        margin-top: 5px;
+      }
+
+      h3 {
+        margin-top: 20px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>LGA Summed Result</h2>
+      <form method="GET">
+        <label for="lga_id">Select LGA:</label>
+        <select name="lga_id">
+          <option value="" selected>---------</option>
+          {% for lga in lgas %}
+          <option value="{{ lga.id }}">{{ lga.name }}</option>
+          {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-primary">Get Result</button>
+      </form>
+
+      {% if total_results %}
+      <h3>Summed Total Result</h3>
+      <ul>
+        {% for result in total_results %}
+        <li>{{ result.party }}: {{ result.total_score }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

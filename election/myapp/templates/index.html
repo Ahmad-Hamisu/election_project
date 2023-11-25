@@ -1,0 +1,79 @@
+<!-- myapp/templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to My App</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <style>
+      body {
+        background-color: #f8f9fa;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #28a745; /* Updated color to green */
+        font-family: "Arial", sans-serif; /* Updated font family */
+      }
+
+      p {
+        font-size: 18px; /* Updated font size */
+        color: #6c757d; /* Updated color to gray */
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-5">Discover My Awesome App!</h1>
+      <!-- Updated heading -->
+      <p>
+        Explore the features of my app. Navigate to different pages using the
+        links below:
+      </p>
+      <ul>
+        <li>
+          <a href="{% url 'polling_unit_result' polling_unit_uniqueid=1 %}"
+            >Polling Unit Result</a
+          >
+        </li>
+        <li><a href="{% url 'lga_summed_result' %}">LGA Summed Result</a></li>
+        <li>
+          <a href="{% url 'store_polling_unit_result' %}"
+            >Store Polling Unit Result</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
